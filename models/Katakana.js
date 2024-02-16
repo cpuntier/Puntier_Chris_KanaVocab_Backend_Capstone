@@ -1,8 +1,8 @@
-const {Schema, model} = require("../config/db-connection");
+const { Schema, model } = require("../config/db-connection");
 
 const katakanaSchema = new Schema(
     {
-        en_romaji:{
+        en_romaji: {
             type: String,
             required: true,
             unique: true,
@@ -12,12 +12,21 @@ const katakanaSchema = new Schema(
             required: true,
             unique: true,
         },
-        audio:{
-            type: String,
+        // audio:{
+        //     type: String,
+        // },
+        row: {
+            type: Number,
+            required: true
         },
+        column: {
+            type: Number,
+            required: true
+        }
 
     }
 )
+
 
 
 module.exports = model('Katakana', katakanaSchema)

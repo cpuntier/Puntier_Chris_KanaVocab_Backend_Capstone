@@ -7,18 +7,21 @@ const app = express()
 // Port in which the server will run on 
 const PORT = process.env.PORT || 8000
 
-// const cors = require("cors");
+const cors = require("cors");
 
 
 const hiraganaRouter = require("./routes/hiragana");
+const katakanaRouter = require("./routes/katakana");
+const flashCardRouter = require("./routes/flashcard");
 
 // Configuring the server to accept and parse JSON data.
 app.use(express.json())
 
-// app.use(cors())
+app.use(cors())
 
 
 app.use("/hiragana",hiraganaRouter);
+app.use("/katakana",katakanaRouter);
 
 // Calling the listen function telling the server to listen on port 3000
 app.listen(PORT, () => {

@@ -3,16 +3,14 @@ const express = require("express");
 const router = express.Router();
 
 
-const {index, create,destroy,createMany} = require("../controllers/hiragana");
+const {index, create,destroy} = require("../controllers/flashcard");
 
 
 router.get("/",index);
 
 router.post("/",create);
 
-router.post("/many",createMany);
-
-router.delete("/romaji", destroy);
+router.delete("/id", destroy);
 
 
 module.exports = router

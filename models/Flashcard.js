@@ -1,6 +1,6 @@
 const {Schema, model} = require("../config/db-connection");
 
-const FlashCards = new Schema(
+const FlashCardsSchema = new Schema(
     {
         en_side:{
             type: String,
@@ -12,9 +12,14 @@ const FlashCards = new Schema(
             required: true,
             unique: true,
         },
+        group_name:{
+            type: String,
+            required: true,
+            unique: true,
+        },
 
     }
 )
 
 
-module.exports = model('flashcards', flashCardsSchema)
+module.exports = model('flashcards', FlashCardsSchema)

@@ -12,9 +12,17 @@ const hiraganaSchema = new Schema(
             required: true,
             unique: true,
         },
-        audio:{
-            type: String,
+        // audio:{
+        //     type: String,
+        // },
+        row:{
+            type: Number,
+            required: true
         },
+        column:{
+            type: Number,
+            required: true
+        }
 
     }
 )
