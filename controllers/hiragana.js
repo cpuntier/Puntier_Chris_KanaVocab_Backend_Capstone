@@ -53,6 +53,17 @@ async function createMany(req, res) {
 
 }
 
+async function randomDocs(req,res){
+    const documents = [];
+    try {
+        const createdHiragana = await Hiragana.aggregate().sample(4);
+        console.log(createdHiragana);
+        res.status(201).send(createdHiragana);
+    } catch (error) {
+        res.status(400).send(error)
+        
+    }
+}
 module.exports = {
-    index, create, destroy, createMany
+    index,create,destroy, createMany, randomDocs
 }

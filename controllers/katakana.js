@@ -53,7 +53,17 @@ async function createMany(req, res) {
 
 }
 
-
+async function randomDocs(req,res){
+    const documents = [];
+    try {
+        const createdKatakana = await Katakana.aggregate().sample(4);
+        console.log(createdKatakana);
+        res.status(201).send(createdKatakana);
+    } catch (error) {
+        res.status(400).send(error)
+        
+    }
+}
 module.exports = {
-    index,create,destroy, createMany
+    index,create,destroy, createMany, randomDocs
 }

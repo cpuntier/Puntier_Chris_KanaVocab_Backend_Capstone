@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 
-const {index, create,destroy,createMany} = require("../controllers/hiragana");
+const {index, create,destroy,createMany, randomDocs} = require("../controllers/hiragana");
 
 
 router.get("/",index);
@@ -14,5 +14,5 @@ router.post("/many",createMany);
 
 router.delete("/romaji", destroy);
 
-
+router.get("/random",randomDocs);
 module.exports = router
