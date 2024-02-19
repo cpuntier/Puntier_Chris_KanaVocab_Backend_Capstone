@@ -48,6 +48,17 @@ async function groupIndex(req,res){
     }
 }
 
+async function findGroup(req,res){
+    try{
+        const createdGroups = await Flashcard.find({group_name: req.params.groupName});
+        if(createdGroups){
+            res.status(201).send(createdGroups);
+        }
+    }catch (error){
+        res.status(400).send(error);
+    }
+}
+
 module.exports = {
-    index,create,destroy, groupIndex
+    index,create,destroy, groupIndex, findGroup
 }
