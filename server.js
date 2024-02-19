@@ -22,6 +22,7 @@ app.use(cors())
 
 app.use("/hiragana",hiraganaRouter);
 app.use("/katakana",katakanaRouter);
+app.use("/flashcards",flashCardRouter)
 
 // Calling the listen function telling the server to listen on port 3000
 app.listen(PORT, () => {

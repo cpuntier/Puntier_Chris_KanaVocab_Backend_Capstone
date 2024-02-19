@@ -35,6 +35,19 @@ async function destroy(req,res){
     }
 }
 
+async function groupIndex(req,res){
+    try {
+        const createdGroups = await Flashcard.find({}).distinct('group_name')
+        if(createdGroups){
+            res.status(201).send(createdGroups);
+        }
+        
+    } catch (error) {
+        res.status(400).send(error)
+        
+    }
+}
+
 module.exports = {
-    index,create,destroy
+    index,create,destroy, groupIndex
 }
