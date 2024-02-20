@@ -15,7 +15,6 @@ const FlashCardsSchema = new Schema(
         group_name:{
             type: String,
             required: true,
-            unique: true,
         },
 
     }
