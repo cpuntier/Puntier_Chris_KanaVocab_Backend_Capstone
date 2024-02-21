@@ -1,4 +1,4 @@
-# KanaVoab Ver C Back End
+# KanaVocab Ver C Back End
 
 Frontend Deployed Live Link: https://splendid-kheer-1d4f7c.netlify.app/
 Backend Deployed Live Link :https://puntier-chris-kanavocab-backend-capstone.onrender.com/
